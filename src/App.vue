@@ -1,19 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <v-code-mirror v-model:value="state.json" />
 </template>
 
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+import { reactive } from 'vue'
+import { VCodeMirror } from 'vue3-code-mirror'
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+const state = reactive({
+  json: JSON.stringify({
+    a: 1,
+    b: 'b',
+    c: ['c'],
+  }, null, 2),
+})
+</script>
