@@ -1,5 +1,3 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import TestWorker from './test?worker';
 
-createApp(App).mount('#app')
-console.log(process.env.NODE_ENV)
+new TestWorker();
